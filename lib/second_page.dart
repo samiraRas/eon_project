@@ -1,9 +1,10 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:textapp/Menu/camera.dart';
 import 'package:textapp/Menu/location.dart';
-import 'package:textapp/Menu/webview.dart';
 
+import 'package:textapp/Menu/webview.dart';
 class SecondPage extends StatefulWidget {
   const SecondPage({Key? key}) : super(key: key);
 
@@ -13,6 +14,10 @@ class SecondPage extends StatefulWidget {
 
 class _SecondPageState extends State<SecondPage> {
   var finalEmail;
+  
+
+ 
+
   Future getValidationData() async{
     
     final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
@@ -26,7 +31,7 @@ class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(centerTitle: true,title: const Text('Menu'),),
+      appBar: AppBar(centerTitle: true,title: const Text('Menu'), automaticallyImplyLeading: false,),
         body: Padding(
             padding: const EdgeInsets.all(10),
             
@@ -68,7 +73,7 @@ class _SecondPageState extends State<SecondPage> {
                 ],
               ),
             
-        )
+        ), 
 
     );
   }

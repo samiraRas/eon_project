@@ -26,6 +26,10 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children:  [
+              FlutterLogo(size: 100),
+              Divider( 
+                height:50.0,
+              ),
               EmailField(emailController: emailController,),
               PasswordField(),
               Divider(

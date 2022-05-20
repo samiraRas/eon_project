@@ -15,7 +15,7 @@ class _WebViewPageState extends State<WebViewPage> {
      
       body:  SafeArea(
         child: WebView(
-          initialUrl:'https://www.amazon.com/',
+          initialUrl:'https://pub.dev/',
           onWebViewCreated: (controller){
             this.controller = controller;
           },

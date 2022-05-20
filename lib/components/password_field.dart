@@ -24,8 +24,9 @@ class _PasswordFieldState extends State<PasswordField> {
         },
         controller: passwordController,
           obscureText: obscurePassword,
-          decoration: const InputDecoration(
-            suffixIcon: Icon(Icons.visibility),
+          decoration: InputDecoration(
+            suffixIcon: IconButton(onPressed: ()=> setState(() => obscurePassword = !obscurePassword),
+            icon:Icon(obscurePassword? Icons.visibility : Icons.visibility_off,)),
           labelText: "Password",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.all(

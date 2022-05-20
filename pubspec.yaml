@@ -36,8 +36,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   webview_flutter: ^3.0.4
   shared_preferences: ^2.0.15
-  camera: ^0.9.6
   path_provider: ^2.0.10
+  image_picker: ^0.8.5+3
+  geolocator: ^8.2.1
+  geocoding: ^2.0.4
+  # geolocator: ^8.2.1
+  # geocoding: ^2.0.4
    
 
 
