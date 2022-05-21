@@ -23,34 +23,36 @@ class _LoginPageState extends State<LoginPage> {
         padding: const EdgeInsets.all(8.0),
         child: Form(
           key: _formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children:  [
-              FlutterLogo(size: 100),
-              Divider( 
-                height:50.0,
-              ),
-              EmailField(emailController: emailController,),
-              PasswordField(),
-              Divider(
-                height: 5.0,
-              ),
-              ElevatedButton(onPressed: () async{
-                // final isValid = _formKey.currentState!.validate();
-                // isValid ?
-                //   Navigator.push(
-                //     context,s
-                //     MaterialPageRoute(builder: (context) => SecondPage()), ) :
-                // ScaffoldMessenger.of(context).showSnackBar(
-                // const SnackBar(content: Text('Processing Data')),
-                // )
-                
-                Fluttertoast.showToast(msg: 'Welcome ', toastLength: Toast.LENGTH_SHORT);
-                final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-                sharedPreferences.setString("email", emailController.text);
-                Navigator.push(context, MaterialPageRoute(builder: (_) => SecondPage() ));
-              }, child: const Text('Submit'))
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children:  [
+                SizedBox(height: 40,),
+                Container(child: FlutterLogo(size: 100)),
+                SizedBox(height: 120,),
+                 
+                EmailField(emailController: emailController,),
+                PasswordField(),
+                Divider(
+                  height: 5.0,
+                ),
+                ElevatedButton(onPressed: () async{
+                  // final isValid = _formKey.currentState!.validate();
+                  // isValid ?
+                  //   Navigator.push(
+                  //     context,s
+                  //     MaterialPageRoute(builder: (context) => SecondPage()), ) :
+                  // ScaffoldMessenger.of(context).showSnackBar(
+                  // const SnackBar(content: Text('Processing Data')),
+                  // )
+                  
+                  Fluttertoast.showToast(msg: 'Welcome ', toastLength: Toast.LENGTH_SHORT);
+                  final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+                  sharedPreferences.setString("email", emailController.text);
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => SecondPage() ));
+                }, child: const Text('Submit'))
+              ],
+            ),
           ),
 
         ),

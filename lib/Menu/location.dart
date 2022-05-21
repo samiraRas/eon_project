@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:geocoding/geocoding.dart';
+// import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 
 class Location extends StatefulWidget {
@@ -63,22 +63,22 @@ Future<Position> _determinePosition() async {
         lat = value.latitude;
         long = value.longitude;
       });
-      getAddress(value.latitude, value.longitude);
+      // getAddress(value.latitude, value.longitude);
     }).catchError((error) {
       print("Error $error");
     });
   }
 
-    getAddress(lat, long) async {
-    List<Placemark> placemarks = await placemarkFromCoordinates(lat, long);
-    setState(() {
-      address = placemarks[0].street! + " " + placemarks[0].country!;
-    });
+  //   getAddress(lat, long) async {
+  //   List<Placemark> placemarks = await placemarkFromCoordinates(lat, long);
+  //   setState(() {
+  //     address = placemarks[0].street! + " " + placemarks[0].country!;
+  //   });
 
-    for (int i = 0; i < placemarks.length; i++) {
-      print("INDEX $i ${placemarks[i]}");
-    }
-  }
+  //   for (int i = 0; i < placemarks.length; i++) {
+  //     print("INDEX $i ${placemarks[i]}");
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -99,8 +99,8 @@ Future<Position> _determinePosition() async {
               SizedBox( height: 20,),
               Text("Longtitude : $long",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18 )),
               SizedBox( height: 20,),
-              Text("Address : $address ",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-              SizedBox( height: 20,),
+              // Text("Address : $address ",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+              // SizedBox( height: 20,),
               ElevatedButton(
                 onPressed: getLatLong,
                 child: const Text("Get Location"),

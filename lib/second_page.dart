@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:textapp/Menu/barcodepage.dart';
 import 'package:textapp/Menu/camera.dart';
 import 'package:textapp/Menu/location.dart';
 
@@ -48,7 +49,11 @@ class _SecondPageState extends State<SecondPage> {
                       ),
                       ElevatedButton(
                         child: Text('Barcode'),
-                        onPressed: () {/** */},
+                        onPressed: () {
+                          Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Barcodepage()), );
+                        },
                       ),
                       ElevatedButton(
                         child: Text('Webview'),
@@ -68,7 +73,7 @@ class _SecondPageState extends State<SecondPage> {
                   ),
                   Column(children: [ElevatedButton(onPressed: (){
                     getValidationData();
-                    // Navigator.pop(context);
+                    Navigator.pop(context);
                   }, child: Text("Logout"))],)
                 ],
               ),
