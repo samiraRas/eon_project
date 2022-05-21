@@ -20,13 +20,20 @@ _scan() async{
       appBar: AppBar(title: Text('Barcode Scanner')),
       body:  Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            FlutterLogo(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Result: $_data",style: TextStyle(fontWeight: FontWeight.bold ,fontSize: 25),),
+              ],
+            ),
+               
+               SizedBox(height: 50),
             ElevatedButton(onPressed: ()=>  _scan() , 
             child: Text("Scan BarCode"),
             ),
-             Text("Result: $_data"),
+            
           ],
              
         ),

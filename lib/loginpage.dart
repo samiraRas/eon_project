@@ -37,20 +37,21 @@ class _LoginPageState extends State<LoginPage> {
                   height: 5.0,
                 ),
                 ElevatedButton(onPressed: () async{
-                  // final isValid = _formKey.currentState!.validate();
-                  // isValid ?
-                  //   Navigator.push(
-                  //     context,s
-                  //     MaterialPageRoute(builder: (context) => SecondPage()), ) :
-                  // ScaffoldMessenger.of(context).showSnackBar(
-                  // const SnackBar(content: Text('Processing Data')),
-                  // )
+                  final isValid = _formKey.currentState!.validate();
+                  isValid ?
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SecondPage()), )
+                       :
+                  ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Processing Data')),
+                  );
                   
-                  Fluttertoast.showToast(msg: 'Welcome ', toastLength: Toast.LENGTH_SHORT);
+                  // Fluttertoast.showToast(msg: 'Welcome ', toastLength: Toast.LENGTH_SHORT);
                   final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
                   sharedPreferences.setString("email", emailController.text);
-                  Navigator.push(context, MaterialPageRoute(builder: (_) => SecondPage() ));
                 }, child: const Text('Submit'))
+             
               ],
             ),
           ),
